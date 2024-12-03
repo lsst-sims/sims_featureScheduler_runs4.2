@@ -1,4 +1,5 @@
 Updates since v4.1
 
 * Updating start date
-* xxx--removing scripted_id. xxx--pending
+* Removed scripted_id and put more info in scheduler_note
+
