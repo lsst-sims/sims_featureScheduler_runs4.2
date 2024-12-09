@@ -8,11 +8,11 @@
 #SBATCH --error=output-%j.txt
 #
 #SBATCH --nodes=1                       # Number of nodes
-#SBATCH --ntasks=3
+#SBATCH --ntasks=9
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=20g
 #
-#SBATCH --time=1-14:10:00
+#SBATCH --time=2-14:10:00
 #SBATCH --chdir=/sdf/data/rubin/shared/fbs_sims/sims_featureScheduler_runs4.2/maf
 #SBATCH --mail-user=yoachim@uw.edu
 #
