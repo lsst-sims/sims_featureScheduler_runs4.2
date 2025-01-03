@@ -47,13 +47,13 @@
 
 ## Set up the evironment
 source  /gscratch/astro/yoachim/miniconda3/etc/profile.d/conda.sh
-conda activate rubin2
+conda activate rubin
 export OPENBLAS_NUM_THREADS=1
 
 cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs4.2/technical/template_fiddle
 
 ## run all the baseline commands in parallel
-module load parallel-20170722
+module load gnu/parallel/20210422
 
 cat tt.sh | parallel -j 6
 
