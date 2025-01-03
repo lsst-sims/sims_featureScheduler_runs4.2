@@ -15,7 +15,7 @@
 ## Nodes
 
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=5
+#SBATCH --ntasks-per-node=6
 
 ## Walltime (hours:min:sec) Do not specify a walltime substantially more than your job needs.
 
@@ -46,8 +46,8 @@
 #SBATCH --export=all
 
 ## Set up the evironment
-source ~/anaconda3/etc/profile.d/conda.sh
-conda activate guro
+source  /gscratch/astro/yoachim/miniconda3/etc/profile.d/conda.sh
+conda activate rubin2
 export OPENBLAS_NUM_THREADS=1
 
 cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs4.2/technical/template_fiddle
@@ -55,7 +55,7 @@ cd /gscratch/scrubbed/yoachim/sims_featureScheduler_runs4.2/technical/template_f
 ## run all the baseline commands in parallel
 module load parallel-20170722
 
-cat tt.sh | parallel -j 5
+cat tt.sh | parallel -j 6
 
 #rm maf.sh
 #ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" > maf.sh
