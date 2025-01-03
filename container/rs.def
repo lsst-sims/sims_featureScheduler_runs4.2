@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: ubuntu:18.04
+%post
+    apt -y update
+    apt -y install curl git wget
+
+# Install miniconda
+ENV CONDA_DIR /opt/conda
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p /opt/conda
+
+# Put conda in path so we can use conda activate
+ENV PATH=$CONDA_DIR/bin:$PATH
+
+RUN git clone https://github.com/lsst/rubin_scheduler.git 
+RUN cd rubin_scheduler
+RUN conda create --channel conda-forge --name rubin --file requirements.txt python=3.11
+RUN conda activate rubin
+RUN pip install -e . --no-deps
