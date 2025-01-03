@@ -8,7 +8,7 @@
 
 ## On mox and ikt, the account and partition options should be the same.
 #SBATCH --account=astro
-#SBATCH --partition=astro
+#SBATCH --partition=compute
 
 ## Resources
 
