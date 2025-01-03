@@ -8,7 +8,7 @@
 
 ## On mox and ikt, the account and partition options should be the same.
 #SBATCH --account=astro
-#SBATCH --partition=compute-hugemem
+#SBATCH --partition=compute-bigmem
 
 ## Resources
 
@@ -29,7 +29,7 @@
 
 ## See above section on "Specifying memory" for choices for --mem.
 
-#SBATCH --mem=500G
+#SBATCH --mem=300G
 
 ## Specify the working directory for this job
 
