@@ -7,7 +7,6 @@ From: ubuntu:18.04
     wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda
     export PATH=$CONDA_DIR/bin:$PATH
-    source $CONDA_DIR/etc/profile.d/conda.sh
     git clone https://github.com/lsst/rubin_scheduler.git 
     cd rubin_scheduler
     conda create --channel conda-forge --name rubin --file requirements.txt python=3.11
