@@ -6,11 +6,12 @@ From: ubuntu:18.04
     export CONDA_DIR=/opt/conda
     wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda
-    export PATH=$CONDA_DIR/bin:$PATH
-    conda init --all
-    echo "Conda should be inited"
+    export PATH=$CONDA_DIR/bin:$PATH\
     git clone https://github.com/lsst/rubin_scheduler.git 
     cd rubin_scheduler
+    conda init --all
+    ls
+    echo "Conda should be inited"
     conda create --channel conda-forge --name rubin --file requirements.txt python=3.11
     conda activate rubin
     pip install -e . --no-deps
