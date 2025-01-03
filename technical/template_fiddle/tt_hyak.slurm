@@ -8,7 +8,7 @@
 
 ## On mox and ikt, the account and partition options should be the same.
 #SBATCH --account=astro
-#SBATCH --partition=compute-bigmem
+#SBATCH --partition=compute-hugemem
 
 ## Resources
 
