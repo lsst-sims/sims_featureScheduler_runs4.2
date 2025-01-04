@@ -24,7 +24,8 @@ RUN arch=$(uname -m) && \
     bash miniconda.sh -b -p /root/miniconda3 && \
     rm -f miniconda.sh
 
-RUN git clone https://github.com/lsst/rubin_scheduler.git 
+RUN git clone https://github.com/lsst/rubin_scheduler.git  \
+    && git clone https://github.com/lsst/rubin_sim.git
 
 # install rubin_scheduler
 RUN cd rubin_scheduler \
@@ -32,12 +33,20 @@ RUN cd rubin_scheduler \
     && . ~/.bashrc \
     && conda create --channel conda-forge --name rubin --file requirements.txt python=3.11 \
     && conda activate rubin \
-    && pip install -e . --no-deps
+    && pip install -e . --no-deps 
 
-RUN cd rubin_scheduler/tests/scheduler \
+# install rubin_sim
+RUN cd rubin_sim \
     && conda init bash \
     && . ~/.bashrc \
     && conda activate rubin \
-    && python test_nside.py
+    && conda install --channel conda-forge --file requirements.txt  \
+    && pip install -e . --no-deps    
 
+# Download data for rubin_sim and rubin_sim
+# RUN conda init bash \
+#     && . ~/.bashrc \
+#     && conda activate rubin \
+#     && rs_download_data \
+#     && scheduler_download_data
 
