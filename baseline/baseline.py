@@ -93,7 +93,7 @@ def standard_bf(
     g_template_weight=50.0,
     footprints=None,
     n_obs_template=None,
-    season=300.0,
+    season=365.25,
     season_start_hour=-4.0,
     season_end_hour=2.0,
     moon_distance=30.0,
@@ -116,7 +116,7 @@ def standard_bf(
         Default None.
     season : `float`
         The length of season (i.e., how long before templates expire) (days).
-        Default 300.
+        Default 365.25.
     season_start_hour : `float`
         Hour angle limits to use when gathering templates.
         Default -4 (hours)
@@ -303,7 +303,7 @@ def blob_for_long(
     pair_time=33.0,
     camera_rot_limits=[-80.0, 80.0],
     n_obs_template=None,
-    season=300.0,
+    season=365.25,
     season_start_hour=-4.0,
     season_end_hour=2.0,
     shadow_minutes=60.0,
@@ -355,7 +355,7 @@ def blob_for_long(
         If None, sets to 3 each. Default None.
     season : float
         The length of season (i.e., how long before templates expire) (days)
-        Default 300.
+        Default 365.25.
     season_start_hour : `float`
         Hour angle limits to use when gathering templates.
         Default -4 (hours)
@@ -736,7 +736,7 @@ def generate_blobs(
     pair_time=33.0,
     camera_rot_limits=[-80.0, 80.0],
     n_obs_template=None,
-    season=300.0,
+    season=365.25,
     season_start_hour=-4.0,
     season_end_hour=2.0,
     shadow_minutes=60.0,
@@ -789,7 +789,7 @@ def generate_blobs(
         If None, sets to 3 each.
     season : `float`
         The length of season (i.e., how long before templates expire) (days).
-        Default 300.
+        Default 365.25.
     season_start_hour : `float`
         Hour angle limits to use when gathering templates.
         Default -4 (hours)
@@ -994,7 +994,7 @@ def generate_twi_blobs(
     pair_time=15.0,
     camera_rot_limits=[-80.0, 80.0],
     n_obs_template=None,
-    season=300.0,
+    season=365.25,
     season_start_hour=-4.0,
     season_end_hour=2.0,
     shadow_minutes=60.0,
@@ -1041,7 +1041,7 @@ def generate_twi_blobs(
         If None, sets to 3 each. Default None.
     season : `float`
         The length of season (i.e., how long before templates expire) (days).
-        Default 300.
+        Default 365.25.
     season_start_hour : `float`
         Hour angle limits to use when gathering templates.
         Default -4 (hours)
