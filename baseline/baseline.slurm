@@ -25,12 +25,12 @@ source ~/anaconda3/etc/profile.d/conda.sh
 conda activate rubin
 export OPENBLAS_NUM_THREADS=1
 
-# python baseline.py 
+python baseline.py 
 
 
-rm maf.sh
+#rm maf.sh
 # 
-ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" > maf.sh
+#ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" > maf.sh
 # ls *10yrs.db | xargs -I'{}' echo "glance_dir --db '{}'" >> maf.sh
 # ls *10yrs.db | xargs -I'{}' echo "ddf_dir --db '{}'" >> maf.sh
 # ls *10yrs.db | xargs -I'{}' echo "metadata_dir --db '{}'" >> maf.sh
@@ -38,4 +38,4 @@ ls *10yrs.db | xargs -I'{}' echo "scimaf_dir --db '{}'" > maf.sh
 # generate_ss
 # cat ss_script.sh >> maf.sh
 # 
-cat maf.sh | parallel -j 1
+#cat maf.sh | parallel -j 1
