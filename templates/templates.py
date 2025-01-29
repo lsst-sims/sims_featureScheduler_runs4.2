@@ -322,10 +322,9 @@ def template_surveys(
     dark_only=['u', 'g'],
     u_nexp1=True,
     pair_time=33.,
-    shadow_minutes=33.,
     area_required=50.,
-    HA_min=2.5,
-    HA_max=24 - 2.5,
+    HA_min=3.5,
+    HA_max=24 - 3.5,
     max_alt=76.,
 ):
     """Surveys that will be agressive about gathering template images"""
@@ -374,7 +373,7 @@ def template_surveys(
         bfs.append(
             (
                 bf.AltAzShadowMaskBasisFunction(
-                    nside=nside, shadow_minutes=shadow_minutes, max_alt=max_alt, pad=3.0
+                    nside=nside, shadow_minutes=pair_time, max_alt=max_alt, pad=3.0
                 ),
                 0,
             )
@@ -1715,6 +1714,10 @@ def gen_scheduler(args):
     split_long = args.split_long
     too = ~args.no_too
 
+    template_ha_range = args.template_ha_range
+    template_time = args.template_time
+    template_area = args.template_area
+
     # Parameters that were previously command-line
     # arguments.
     max_dither = 0.2  # Degrees. For DDFs
@@ -1861,8 +1864,11 @@ def gen_scheduler(args):
         gen_roman_off_season(nexp=nexp, exptime=29.2),
     ]
 
-    templ_surveys = template_surveys(nside, nexp=nexp, footprints=footprints)
-
+    templ_surveys = template_surveys(nside, nexp=nexp, footprints=footprints, 
+                                     pair_time=template_time,
+                                     area_required=template_area,
+                                     HA_min=template_ha_range,
+                                     HA_max=24 - template_ha_range,)
 
     if too:
         too_scale = 1.0
@@ -1958,6 +1964,10 @@ def sched_argparser():
     parser.set_defaults(split_long=False)
     parser.add_argument("--no_too", dest="no_too", action="store_true")
     parser.set_defaults(no_too=False)
+
+    parser.add_argument("--template_ha_range", type=float, default=2.5)
+    parser.add_argument("--template_time", type=float, default=33.)
+    parser.add_argument("--template_area", type=float, default=50)
 
     return parser
 
