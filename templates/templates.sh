@@ -1,48 +1,49 @@
-python templates.py --template_ha_range 1.50 --template_time 15.00 --template_area 50.00 
-python templates.py --template_ha_range 1.50 --template_time 15.00 --template_area 100.00 
-python templates.py --template_ha_range 1.50 --template_time 15.00 --template_area 200.00 
-python templates.py --template_ha_range 1.50 --template_time 15.00 --template_area 400.00 
-python templates.py --template_ha_range 1.50 --template_time 33.00 --template_area 50.00 
-python templates.py --template_ha_range 1.50 --template_time 33.00 --template_area 100.00 
-python templates.py --template_ha_range 1.50 --template_time 33.00 --template_area 200.00 
-python templates.py --template_ha_range 1.50 --template_time 33.00 --template_area 400.00 
-python templates.py --template_ha_range 1.50 --template_time 60.00 --template_area 50.00 
-python templates.py --template_ha_range 1.50 --template_time 60.00 --template_area 100.00 
-python templates.py --template_ha_range 1.50 --template_time 60.00 --template_area 200.00 
-python templates.py --template_ha_range 1.50 --template_time 60.00 --template_area 400.00 
-python templates.py --template_ha_range 1.50 --template_time 90.00 --template_area 50.00 
-python templates.py --template_ha_range 1.50 --template_time 90.00 --template_area 100.00 
-python templates.py --template_ha_range 1.50 --template_time 90.00 --template_area 200.00 
-python templates.py --template_ha_range 1.50 --template_time 90.00 --template_area 400.00 
-python templates.py --template_ha_range 2.50 --template_time 15.00 --template_area 50.00 
-python templates.py --template_ha_range 2.50 --template_time 15.00 --template_area 100.00 
-python templates.py --template_ha_range 2.50 --template_time 15.00 --template_area 200.00 
-python templates.py --template_ha_range 2.50 --template_time 15.00 --template_area 400.00 
-python templates.py --template_ha_range 2.50 --template_time 33.00 --template_area 50.00 
-python templates.py --template_ha_range 2.50 --template_time 33.00 --template_area 100.00 
-python templates.py --template_ha_range 2.50 --template_time 33.00 --template_area 200.00 
-python templates.py --template_ha_range 2.50 --template_time 33.00 --template_area 400.00 
-python templates.py --template_ha_range 2.50 --template_time 60.00 --template_area 50.00 
-python templates.py --template_ha_range 2.50 --template_time 60.00 --template_area 100.00 
-python templates.py --template_ha_range 2.50 --template_time 60.00 --template_area 200.00 
-python templates.py --template_ha_range 2.50 --template_time 60.00 --template_area 400.00 
-python templates.py --template_ha_range 2.50 --template_time 90.00 --template_area 50.00 
-python templates.py --template_ha_range 2.50 --template_time 90.00 --template_area 100.00 
-python templates.py --template_ha_range 2.50 --template_time 90.00 --template_area 200.00 
-python templates.py --template_ha_range 2.50 --template_time 90.00 --template_area 400.00 
-python templates.py --template_ha_range 3.50 --template_time 15.00 --template_area 50.00 
-python templates.py --template_ha_range 3.50 --template_time 15.00 --template_area 100.00 
-python templates.py --template_ha_range 3.50 --template_time 15.00 --template_area 200.00 
-python templates.py --template_ha_range 3.50 --template_time 15.00 --template_area 400.00 
-python templates.py --template_ha_range 3.50 --template_time 33.00 --template_area 50.00 
-python templates.py --template_ha_range 3.50 --template_time 33.00 --template_area 100.00 
-python templates.py --template_ha_range 3.50 --template_time 33.00 --template_area 200.00 
-python templates.py --template_ha_range 3.50 --template_time 33.00 --template_area 400.00 
-python templates.py --template_ha_range 3.50 --template_time 60.00 --template_area 50.00 
-python templates.py --template_ha_range 3.50 --template_time 60.00 --template_area 100.00 
-python templates.py --template_ha_range 3.50 --template_time 60.00 --template_area 200.00 
-python templates.py --template_ha_range 3.50 --template_time 60.00 --template_area 400.00 
-python templates.py --template_ha_range 3.50 --template_time 90.00 --template_area 50.00 
-python templates.py --template_ha_range 3.50 --template_time 90.00 --template_area 100.00 
-python templates.py --template_ha_range 3.50 --template_time 90.00 --template_area 200.00 
-python templates.py --template_ha_range 3.50 --template_time 90.00 --template_area 400.00 
+python baseline.py --survey_length 1095.75 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 15.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 15.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 15.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 15.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 33.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 33.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 33.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 33.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 60.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 60.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 60.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 60.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 90.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 90.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 90.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 1.50 --template_time 90.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 15.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 15.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 15.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 15.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 33.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 33.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 33.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 33.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 60.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 60.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 60.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 60.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 90.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 90.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 90.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 2.50 --template_time 90.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 15.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 15.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 15.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 15.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 33.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 33.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 33.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 33.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 60.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 60.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 60.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 60.00 --template_area 400.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 90.00 --template_area 50.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 90.00 --template_area 100.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 90.00 --template_area 200.00 
+python templates.py --survey_length 1095.75 --template_ha_range 3.50 --template_time 90.00 --template_area 400.00 
