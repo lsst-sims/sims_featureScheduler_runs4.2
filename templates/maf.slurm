@@ -7,8 +7,8 @@
 #SBATCH --output=output-%j.txt
 #SBATCH --error=output-%j.txt
 #
-#SBATCH --nodes=2                       # Number of nodes
-#SBATCH --ntasks=30
+#SBATCH --nodes=1                       # Number of nodes
+#SBATCH --ntasks=20
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=20g
 #
@@ -32,4 +32,4 @@ rm maf.sh
  
 ls *3yrs.db | xargs -I'{}' echo "python template_time.py --db '{}'" > maf.sh
 
-cat maf.sh | parallel -j 30
+cat maf.sh | parallel -j 20
