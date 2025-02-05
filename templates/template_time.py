@@ -15,13 +15,13 @@ import rubin_sim.maf.db as db
 import rubin_sim.maf.metric_bundles as mb
 
 
-def tt_batch():
+def tt_batch(run_name, time_min=16):
 
     standard_stats = standard_summary()
     bundle_list = []
     bands = 'ugrizy'
     for band in bands:
-        sql = "band = '%s'" % band
+        sql = "visitExposureTime > %f and band = '%s'" % (time_min, band)
 
         slicer = slicers.HealpixSlicer()
         metric = metrics.TemplateTime(seeing_percentile=100,
@@ -31,7 +31,8 @@ def tt_batch():
         bundle_list.append(metric_bundles.MetricBundle(metric, 
                                                        slicer, 
                                                        sql,
-                                                       summary_metrics=standard_stats))
+                                                       summary_metrics=standard_stats,
+                                                       run_name=run_name))
 
     bd = metric_bundles.make_bundles_dict_from_list(bundle_list)
 
@@ -55,7 +56,7 @@ if __name__ == "__main__":
         if os.path.isdir(name + "_ttime"):
             shutil.rmtree(name + "_ttime")
 
-        bdict = tt_batch()
+        bdict = tt_batch(name)
         results_db = db.ResultsDb(out_dir=name + "_ttime")
         group = mb.MetricBundleGroup(
             bdict,
