@@ -15,3 +15,7 @@ Parameters that could be varied:
 * how large an hour angle range to allow (3.5, 2.5, 1.5)
 * how long should we try to do a template gather blob? (default 33 min, but that's pretty random) (15, 33, 60, 90)
 * how much area to demand before actually doing a template gather? (50, 100, 200, 400)
+
+
+
+Initial results seem be be very modest. We can get the nights without templates down by around 25 days in some, but not all, filters. 
