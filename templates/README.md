@@ -19,3 +19,9 @@ Parameters that could be varied:
 
 
 Initial results seem be be very modest. We can get the nights without templates down by around 25 days in some, but not all, filters. 
+
+Looks like in the baseline, we get u and g a bit faster. Probably a case where dark time can get used to get templates for other filters, but that ends up impacting u and g a bit, so the overall effect is sort of a wash.
+
+----
+
+Bumped up to v 4.2.1, I think there was a small change from refactoring DDFs that make things not identical to v4.2
