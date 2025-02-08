@@ -1564,15 +1564,6 @@ def run_sched(
     n_visit_limit = None
     fs = SimpleBandSched(illum_limit=illum_limit)
     observatory = ModelObservatory(nside=nside, mjd_start=mjd_start, sim_to_o=sim_to_o)
-    observatory.set_telescope(
-        altitude_maxspeed=2.0,
-        altitude_accel=2.0,
-        altitude_jerk=8.0,
-        azimuth_maxspeed=2.0,
-        azimuth_accel=2.0,
-        azimuth_jerk=8.0,
-        settle_time=0.0,
-    )
     observatory, scheduler, observations = sim_runner(
         observatory,
         scheduler,

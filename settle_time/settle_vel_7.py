@@ -347,7 +347,7 @@ def blob_for_long(
     exptime : `float`
         The exposure time to use per visit (seconds).
         Default 29.2
-    band1s : `list` of `str`
+    band1s : `list` [`str`]
         The bandnames for the first band in a pair.
         Default ["g"].
     band2s : `list` of `str`
@@ -535,7 +535,7 @@ def gen_long_gaps_survey(
     -----------
     footprints : `rubin_scheduler.scheduler.utils.footprints.Footprints`
         The footprints to be used.
-    night_pattern : `list` of `bool`
+    night_pattern : `list` [`bool`]
         Which nights to let the survey execute. Default of [True, True]
         executes every night.
     gap_range : `list` of `float`
@@ -790,7 +790,7 @@ def generate_blobs(
     exptime : `float`
         The exposure time to use per visit (seconds).
         Default 29.2
-    band1s : `list` of `str`
+    band1s : `list` [`str`]
         The bandnames for the first set.
         Default ["u", "u", "g", "r", "i", "z", "y"]
     band2s : `list` of `str`
@@ -1235,7 +1235,7 @@ def generate_twi_blobs(
 
 def ddf_surveys(
     detailers=None,
-    season_unobs_frac=0.2,
+    offseason_length=73.05,
     euclid_detailers=None,
     nside=None,
     expt=29.2,
@@ -1260,7 +1260,7 @@ def ddf_surveys(
     if nexp == 1:
         nsnaps = [1, 1, 1, 1, 1, 1]
     obs_array = generate_ddf_scheduled_obs(
-        season_unobs_frac=season_unobs_frac, expt=expt, nsnaps=nsnaps
+        offseason_length=offseason_length, expt=expt, nsnaps=nsnaps
     )
     euclid_obs = np.where(
         (obs_array["scheduler_note"] == "DD:EDFS_b")
@@ -1558,6 +1558,7 @@ def run_sched(
     mjd_start=60796.0,
     event_table=None,
     sim_to_o=None,
+    snapshot_dir=None,
 ):
     """Run survey"""
     n_visit_limit = None
@@ -1583,6 +1584,7 @@ def run_sched(
         extra_info=extra_info,
         band_scheduler=fs,
         event_table=event_table,
+        snapshot_dir=snapshot_dir,
     )
 
     return observatory, scheduler, observations
@@ -1598,13 +1600,14 @@ def gen_scheduler(args):
     mjd_plus = args.mjd_plus
     split_long = args.split_long
     too = ~args.no_too
+    snapshot_dir = args.snapshot_dir
 
     # Parameters that were previously command-line
     # arguments.
     max_dither = 0.2  # Degrees. For DDFs
-    ddf_season_frac = 0.2  # Amount of season to use for DDFs
+    ddf_offseason_length = 365.25 * 0.2  # Amount of season not to use for DDFs
     illum_limit = 40.0  # Percent. Lunar illumination used for band loading
-    u_exptime = 38.0  # Deconds
+    u_exptime = 38.0  # Seconds
     nslice = 2  # N slices for rolling
     rolling_scale = 0.9  # Strength of rolling
     rolling_uniform = True  # Should we use the uniform rolling flag
@@ -1707,7 +1710,7 @@ def gen_scheduler(args):
     ]
     ddfs = ddf_surveys(
         detailers=details,
-        season_unobs_frac=ddf_season_frac,
+        offseason_length=ddf_offseason_length,
         euclid_detailers=euclid_detailers,
         nside=nside,
         nexp=nexp,
@@ -1792,6 +1795,7 @@ def gen_scheduler(args):
             mjd_start=mjd_start,
             event_table=event_table,
             sim_to_o=sim_ToOs,
+            snapshot_dir=snapshot_dir,
         )
         return observatory, scheduler, observations
 
@@ -1834,6 +1838,12 @@ def sched_argparser():
         dest="split_long",
         action="store_true",
         help="Split long ToO exposures into standard visit lengths",
+    )
+    parser.add_argument(
+        "--snapshot_dir",
+        type=str,
+        default="",
+        help="Directory for scheduler snapshots.",
     )
     parser.set_defaults(split_long=False)
     parser.add_argument("--no_too", dest="no_too", action="store_true")
