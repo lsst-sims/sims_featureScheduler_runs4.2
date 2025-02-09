@@ -1564,7 +1564,7 @@ def run_sched(
     n_visit_limit = None
     fs = SimpleBandSched(illum_limit=illum_limit)
     observatory = ModelObservatory(nside=nside, mjd_start=mjd_start, sim_to_o=sim_to_o)
-    observatory.set_telescope(
+    observatory.setup_telescope(
         altitude_maxspeed=2.0,
         altitude_accel=2.0,
         altitude_jerk=8.0,
