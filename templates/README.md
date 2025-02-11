@@ -25,3 +25,6 @@ Looks like in the baseline, we get u and g a bit faster. Probably a case where d
 ----
 
 Bumped up to v 4.2.1, I think there was a small change from refactoring DDFs that make things not identical to v4.2
+
+Final message, if one wants templates in a certain area, or in a certain filter, that could be prioritized. But just "get full sky templates earlier" isn't really feasible because there is nothing one can make a trade off with to do it much faster than the baseline strategy.
+
