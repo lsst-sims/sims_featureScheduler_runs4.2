@@ -3,5 +3,7 @@
 # sims_featureScheduler_runs4.2
 The further adventues of simulating Rubin observing strategies
 
+Database files for simulations available at:  https://s3df.slac.stanford.edu/data/rubin/sim-data/sims_featureScheduler_runs4.2/
 
-Results often served at: https://usdf-maf.slac.stanford.edu/
+Plots and analysis at: https://usdf-maf.slac.stanford.edu/
+
